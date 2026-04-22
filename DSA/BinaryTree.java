@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import java.util.Queue;
+import java.util.ArrayDeque;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Node{
 	int data;
@@ -56,6 +60,31 @@ public class Tree{
 			System.out.print(p.data + "\t");
 		}
 	}
+
+	void levelorder(Node root){
+		if(root != null){
+			List<List<Integer>> ans = new ArrayList<>();
+			Queue<Node> q = new ArrayDeque<>();
+			q.offer(root);
+			while(!q.isEmpty()){
+				int s = q.size();
+				List<Integer> level = new ArrayList<>();
+				for(int i = 0 ; i < s ; i++){
+					Node temp = q.poll();
+					if(temp.ladd != null) q.offer(temp.ladd);
+					if(temp.radd != null) q.offer(temp.radd);
+					level.add(temp.data);
+				}
+				ans.add(level);
+			}
+			for(List<Integer> vec : ans){
+				for(Integer it : vec){
+					System.out.println(it + " ");
+				}
+				System.out.println();
+			}
+		}
+	}
 }
 
 public class BinaryTree{
@@ -71,7 +100,8 @@ public class BinaryTree{
 			System.out.println("2. Inorder");
 			System.out.println("3. Preorder");
 			System.out.println("4. Postorder");
-			System.out.println("5. Exit");
+			System.out.println("5. Levelorder");
+			System.out.println("6. Exit");
 
 			ch = sc.nextInt();
 			switch(ch){
@@ -86,11 +116,12 @@ public class BinaryTree{
 			case 2: t1.inorder(t1.root); break;
 			case 3: t1.preorder(t1.root); break;
 			case 4: t1.postorder(t1.root); break;
-			case 5: break;
+			case 5: t1.levelorder(t1.root); break;	
+			case 6: break;
 			default: System.out.println("Invalid choice: ");
 			}
 		}
-		while(ch != 5);
+		while(ch != 6);
 		sc.close();
 	}
 }
