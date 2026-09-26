@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Node{
+class Node{
 	int data;
 	Node ladd;
 	Node radd;
@@ -16,7 +16,7 @@ public class Node{
 	}
 }
 
-public class Tree{
+class Tree{
 	Node root = null;
 
 	Node create(Node p, int n){
