@@ -1,4 +1,4 @@
-class Selection_sort{
+public class Selection_sort{
 	public static void main(String[] args){
 		int nums[] = {64, 34, 25, 5, 22, 11, 90, 12};
 		int i, j;

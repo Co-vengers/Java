@@ -4,6 +4,7 @@ class Tostring{
 		message = msg;
 	}
 
+	@Override 
 	public String toString(){
 		return message;
 	}

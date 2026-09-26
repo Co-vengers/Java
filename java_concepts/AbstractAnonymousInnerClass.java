@@ -1,4 +1,4 @@
-public abstract class A{
+abstract class A{
 	abstract void show();
 	abstract void display();
 }
@@ -8,9 +8,11 @@ public class AbstractAnonymousInnerClass{
 		// this object doesn't belongs to class A
 		// It belongs to the anonymous inner class 
 		A obj = new A(){
+			@Override 
 			public void show(){
 				System.out.println("Inside anonymous class");
 			}
+			@Override 
 			public void display(){
 				System.out.println("Another method in anonymoous class");
 			}

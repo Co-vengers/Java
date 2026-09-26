@@ -5,12 +5,14 @@ class Test1{
 }
 
 class Test2 extends Test1{
+    @Override 
     public void show(){
         System.out.println("Inside class Test2");
     }
 }
 
 class Test3 extends Test1{
+    @Override 
     public void show(){
         System.out.println("Inside class Test3");
     }

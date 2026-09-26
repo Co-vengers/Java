@@ -1,5 +1,3 @@
-package DSA;
-
 public class Qsort {
     void qsort(int a[], int lower, int upper){
         int temp = 0;

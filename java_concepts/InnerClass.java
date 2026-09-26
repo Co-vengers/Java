@@ -1,5 +1,5 @@
 // Outer class cannot be declared static
-public class A{
+class A{
 	public void show(){
 		System.out.println("Inside show");
 	}
